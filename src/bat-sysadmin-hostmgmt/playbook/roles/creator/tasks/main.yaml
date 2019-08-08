@@ -1,0 +1,4 @@
+---
+
+- name: create file from template
+  template: src=file.txt.j2 dest=./file.txt

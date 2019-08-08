@@ -1,0 +1,13 @@
+#!/usr/bin/expect
+
+set timeout 20
+set DOMAIN [lindex $argv 0];
+
+spawn virsh console $DOMAIN
+expect "Escape" {send "\r"}
+expect "login:" {send "root\r"}
+expect "New" {send "TestPassword123\r"}
+expect "Retype" {send "TestPassword123\r"}
+expect "~" {send "echo 'PermitRootLogin=yes' > /etc/ssh/sshd_config"}
+expect "~" {send "exit\r"}
+expect "login:" {send \035}

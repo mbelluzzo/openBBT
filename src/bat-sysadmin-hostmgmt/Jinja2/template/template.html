@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+{%  for item in items %}
+    <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+    </tr>
+{%  endfor %}
+</table>

@@ -1,0 +1,8 @@
+---
+
+- name: File Creator
+  hosts: creator
+  remote_user: root
+
+  roles:
+    - creator

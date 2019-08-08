@@ -1,0 +1,22 @@
+#clear-linux-config
+targetMedia:
+- name: ${clear}
+  type: disk
+  children:
+  - name: ${clear}1
+    fstype: vfat
+    mountpoint: /boot
+    size: "128M"
+    type: part
+  - name: ${clear}2
+    fstype: swap
+    size: "256M"
+    type: part
+  - name: ${clear}3
+    fstype: ext4
+    mountpoint: /
+    size: "5930M"
+    type: part
+bundles: [os-core, systemd-networkd-autostart, os-core-update, os-testsuite, domotica]
+kernel: kernel-kvm
+block-devices: [{name: clear, file: clear.img}]

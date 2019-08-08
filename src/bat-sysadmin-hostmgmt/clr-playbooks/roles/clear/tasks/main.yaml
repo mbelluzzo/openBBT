@@ -1,0 +1,13 @@
+---
+
+- name: ClearLinux detected as distro
+  command: echo 'PASS'
+  when: ansible_distribution == 'Clear Linux OS'
+
+- name: ClearLinux detected as OS family
+  command: echo 'PASS'
+  when: ansible_os_family == 'ClearLinux'
+
+- name: Swupd is detected as package manager
+  command: echo 'PASS'
+  when: ansible_pkg_mgr == 'swupd'

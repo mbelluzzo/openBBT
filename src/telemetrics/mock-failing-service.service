@@ -1,0 +1,8 @@
+[Unit]
+Description=Mock Failing Service
+
+[Service]
+ExecStart=/usr/bin/false
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+---
+
+- name: Clear Linux facts testing
+  hosts: machine
+  remote_user: root
+  roles:
+    - clear

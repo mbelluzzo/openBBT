@@ -1,0 +1,9 @@
+Process: /usr/bin/clr-telemetry-bbt-debug.out
+PID: [0-9]+
+Signal: 6
+Backtrace \(TID [0-9]+\):
+#0 raise\(\) - \[libc.so.6\]
+#1 abort\(\) - \[libc.so.6\]
+#2 main\(\) - \[/usr/bin/clr-telemetry-bbt-debug.out\] - /home/avjarami/src/clear/projects/BBT/src/telemetrics/backtrace.c:11
+#3 __libc_start_main\(\) - \[libc.so.6\]
+#4 _start\(\) - \[/usr/bin/clr-telemetry-bbt-debug.out\] - ../sysdeps/x86_64/start.S:120

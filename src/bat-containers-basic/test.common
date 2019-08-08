@@ -1,0 +1,22 @@
+#!/bin/bash
+
+DOCKER_EXE="docker"
+DOCKER_SERVICE="docker"
+
+#Cleaning test environment
+function cleanDockerPs(){
+        LIST=$("$DOCKER_EXE" ps -aq)
+        if [ "$LIST" ]; then
+           "$DOCKER_EXE" rm -f $("$DOCKER_EXE" ps -aq)
+           sleep 3
+        fi
+	}
+
+#Restarting test environment
+function startDockerService(){
+	systemctl status "$DOCKER_SERVICE" | grep 'running'
+	if [ "$?" -eq 0 ]; then
+		systemctl restart "$DOCKER_SERVICE"
+	fi
+	}
+

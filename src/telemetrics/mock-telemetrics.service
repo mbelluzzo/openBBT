@@ -1,0 +1,8 @@
+[Unit]
+Description=Mock Telemetrics Backend
+
+[Service]
+ExecStart=/etc/telemetrics/mock-telemetrics-backend.sh
+
+[Install]
+WantedBy=multi-user.target

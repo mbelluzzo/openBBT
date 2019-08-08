@@ -1,0 +1,27 @@
+---
+
+- name: Update the OS to the latest version
+  swupd:
+    update: yes
+    format: '{{ format|default("") }}'
+  when: ansible_distribution == 'Clear Linux OS'
+
+- name: Installs the "bootloader-extras" bundle
+  swupd:
+    name: bootloader-extras
+    state: present
+    format: '{{ format|default("") }}'
+  when: ansible_distribution == 'Clear Linux OS'
+
+- name: Removes the "bootloader-extras" bundle
+  swupd:
+    name: bootloader-extras
+    state: absent
+    format: '{{ format|default("") }}'
+  when: ansible_distribution == 'Clear Linux OS'
+
+- name: Check integrity of filesystem
+  swupd:
+    verify: yes
+    format: '{{ format|default("") }}'
+  when: ansible_distribution == 'Clear Linux OS'

@@ -1,0 +1,7 @@
+---
+
+- name: Swupd testing
+  hosts: machine
+  remote_user: root
+  roles:
+    - swupd

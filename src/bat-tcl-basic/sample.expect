@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+expect -re "\$|#"
+spawn sh -c "nano hello"
+expect "^X"
+send "hello world"
+send "\x18"
+expect "Save modified buffer"
+send "Y"
+expect "File Name to Write:"
+send "\r"
+expect

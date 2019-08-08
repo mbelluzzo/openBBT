@@ -1,0 +1,36 @@
+<domain type='kvm'>
+  <name>ClearKVM-BBT</name>
+  <memory unit='KiB'>1024000</memory>
+  <currentMemory unit='KiB'>1024000</currentMemory>
+<os>
+    <type>hvm</type>
+    <loader type='pflash'>/var/taas/bios/OVMF.fd</loader>
+    <boot dev='hd' />
+  </os>
+<features>
+    <acpi/>
+    <apic/>
+  </features>
+<devices>
+    <disk type='file' device='disk'>
+      <driver name="qemu" type="qcow2"/>
+      <source file='/var/taas/clear-RELEASE-kvm.qcow2'/>
+      <target bus="virtio" dev="vda"/>
+    </disk>
+<interface type='bridge'>
+      <mac address='fa:16:3e:aa:6e:cb'/>
+      <source bridge='virbr0'/>
+      <model type='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
+    </interface>
+    <serial type='pty'>
+     <target port='0'/>
+    </serial>
+    <console type='pty'>
+     <target type='serial' port='0'/>
+    </console>
+    <serial type="file">
+      <source path="/tmp/Clearlinux.log"/>
+    </serial>
+  </devices>
+</domain>
