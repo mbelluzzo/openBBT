@@ -6,13 +6,6 @@ packages.
 
 ## Running Tests and Getting Results
 
-Generally speaking, to run tests, execute `<repodir>/control/run.sh`.  If no
-options are passed, all possible BAT tests are executed for the bundles that
-are installed.  Options may be passed to filter which tests get run by group
-(bundle folder name) or by label (arbitrary tag associated with a test).  Pass
-the `-h` option for more information on how to filter tests that get run.  With
-this manner of running tests, results will be saved to `<repodir>/results`.
-
 To run tests at an individual file level, execute `bats -t ./<test_file_name>`
 while changed into the working direcotry of the test file.  With this manner of
 running tests, results will be logged to the standard output.
