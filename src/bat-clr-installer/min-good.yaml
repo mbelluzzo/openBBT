@@ -1,0 +1,34 @@
+#clear-linux-config
+
+block-devices: [
+   {name: "bdevice", file: "kvm.img"}
+]
+targetMedia:
+- name: ${bdevice}
+  size: "1.5G"
+  type: disk
+  children:
+  - name: ${bdevice}1
+    fstype: vfat
+    mountpoint: /boot
+    size: "128M"
+    type: part
+  - name: ${bdevice}2
+    fstype: swap
+    size: "256M"
+    type: part
+  - name: ${bdevice}3
+    fstype: ext4
+    mountpoint: /
+    size: "1G"
+    type: part
+bundles: [
+    os-core,
+  ]
+autoUpdate: false
+postArchive: false
+postReboot: false
+telemetry: false
+keyboard: us
+language: en_US.UTF-8
+kernel: kernel-kvm
