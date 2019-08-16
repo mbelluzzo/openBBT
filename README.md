@@ -1,4 +1,4 @@
-# Clear Linux OS* Bundle-based Test (BBT) Suite
+# Clear Linux* OS Bundle-based Test (BBT) Suite
 
 This repository contains build acceptance tests used to evaluate the functional
 correctness of content assembled into a distribution based on groups of
