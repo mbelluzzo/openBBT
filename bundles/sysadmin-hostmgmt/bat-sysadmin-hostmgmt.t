@@ -102,10 +102,3 @@ setup() {
     ansible -m setup localhost | grep "ansible_distribution_major_version" | grep $VERSION_ID
     ansible -m setup localhost | grep "ansible_distribution_version" | grep $VERSION_ID
 }
-
-#
-# * Checking pip modules dependencies
-#
-@test "Checking pip modules dependencies" {
-    pip3 check
-}

@@ -15,10 +15,6 @@ teardown() {
 	rm -rf "$TMP_DIR"
 }
 
-@test "mixer pip3 check" {
-	pip3 check
-}
-
 @test "Create minimal mix natively" {
 	mixer init
 	mixer build bundles --native

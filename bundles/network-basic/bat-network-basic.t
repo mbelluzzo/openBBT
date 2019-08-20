@@ -2,12 +2,6 @@
 # *-*- Mode: sh; c-basic-offset: 8; indent-tabs-mode: nil -*-*
 #
 
-
-@test "network-basic pip3 check" {
-    pip3 check
-}
-
-
 @test "ip command health" {
        ip -V  > /dev/null
 }
