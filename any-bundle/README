@@ -1,0 +1,4 @@
+any_bundle directory
+
+All the tests in this directory should be able to run on any bundle
+and should not have any dependency from a particular bundle
