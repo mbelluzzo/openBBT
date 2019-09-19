@@ -6,9 +6,9 @@ packages.
 
 ## Running Tests and Getting Results
 
-To run tests at an individual file level, execute `bats -t ./<test_file_name>`
-while changed into the working direcotry of the test file.  With this manner of
-running tests, results will be logged to the standard output.
+To run individual test files level, execute `bats -t ./<test_file_name>`
+while changed into the working directory of the test file. When executing
+test files this way, results will be logged to the standard output.
 
 ## Test Result Output
 
