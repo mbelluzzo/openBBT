@@ -30,7 +30,7 @@ setup() {
 }
 
 @test "bat-openssh-server: copy keys for another user" {
-  mkdir -p $SCP_Dest/.ssh
+  mkdir -p $SCP_DEST/.ssh
   cat $Newkey.pub > $SCP_DEST/.ssh/authorized_keys
   chown -R "$Newuser":"$Newuser" "$SCP_DEST/.ssh"
   chmod -R 600 "$SCP_DEST/.ssh"
