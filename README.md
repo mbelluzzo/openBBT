@@ -46,7 +46,7 @@ Relevant files:
 * requirements
   * Defines the bundles being tested and the bundles required for proper test
     execution
-  * Used by `run.sh` to determine if an environment has the required bundles
+  * Used by `run-bbt.sh` to determine if an environment has the required bundles
     installed and can run tests
 * clr-installer.yaml
   * Defines a raw image
@@ -96,7 +96,7 @@ machines may be executed on a single server.
 Relevant files:
 * labels
   * CSV format: `<label>,<test_file_name>`
-  * Used by `run.sh` to limit which tests get run
+  * Used by `run-bbt.sh` to limit which tests get run
 
 Tests will need executed in particular contexts.  A test may need run
 physically, but not virtually.  Or, a test may need run virtually, but not
