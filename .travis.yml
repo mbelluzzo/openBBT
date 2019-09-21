@@ -1,0 +1,6 @@
+language: minimal
+
+jobs:
+  include:
+    - stage: Static Analysis
+      script: make check
