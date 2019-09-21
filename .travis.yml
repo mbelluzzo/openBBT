@@ -3,4 +3,4 @@ language: minimal
 jobs:
   include:
     - stage: Static Analysis
-      script: make check
+      script: CHECKOPTS="--exclude=1083,1089" make check
