@@ -1,9 +1,17 @@
 any_bundle_SRC := $(wildcard $(CURDIR)/any-bundle/*.t)
+any-bundle:
+	@bats -t $(any_bundle_SRC)
+
 bundles_SRC := $(wildcard $(CURDIR)/bundles/*/*.t)
+bundles := $(notdir $(wildcard $(CURDIR)/bundles/*))
+$(bundles):
+	@bats -t $(wildcard $(CURDIR)/bundles/$@/*.t)
 
 SRC := $(any_bundle_SRC) $(bundles_SRC)
+all:
+	@bats -t $(SRC)
 
-bundles := $(notdir $(wildcard $(CURDIR)/bundles/*))
+.PHONY: any-bundle $(bundles)
 
 # Static Code Analysis
 # ====================
