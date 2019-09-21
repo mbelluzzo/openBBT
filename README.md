@@ -1,3 +1,5 @@
+[![Build Status (Travis)](https://api.travis-ci.org/clearlinux/openBBT.svg?branch=master)](https://travis-ci.org/clearlinux/openBBT)
+
 # Clear Linux* OS Bundle-based Test (BBT) Suite
 
 This repository contains build acceptance tests used to evaluate the functional
