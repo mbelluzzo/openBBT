@@ -10,15 +10,15 @@ bundles := $(notdir $(wildcard $(CURDIR)/bundles/*))
 check_CHECKOPTS := --exclude=1091,2155
 check:
 	@echo "Shellcheck [All Bundles]:"
-	shellcheck -x $(check_CHECKOPTS) $(SRC)
+	shellcheck -s bash -x $(check_CHECKOPTS) $(SRC)
 
 check_BUNDLES = $(addprefix check-,$(bundles))
 $(check_BUNDLES): bundle = $(patsubst check-%,%,$@)
 $(check_BUNDLES): tests = $(wildcard $(CURDIR)/bundles/$(bundle)/*.t)
 $(check_BUNDLES):
 	@echo "Shellcheck: [$(bundle)]:"
-	shellcheck -x $(check_CHECKOPTS) $(tests)
+	shellcheck -s bash -x $(check_CHECKOPTS) $(tests)
 
 check-any-bundle:
 	@echo "Shellcheck: [any-bundle]:"
-	shellcheck -x $(check_CHECKOPTS) $(any_bundle_SRC)
+	shellcheck -s bash -x $(check_CHECKOPTS) $(any_bundle_SRC)
