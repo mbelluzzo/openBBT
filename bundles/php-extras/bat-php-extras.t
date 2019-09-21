@@ -14,11 +14,11 @@
 #
 @test "Test every available dynamic PHP module" {
     PHPINDEX=$(mktemp /tmp/XXXXX.php)
-    find /usr/lib64/extensions/no-debug-non-zts-*/ -type f -exec basename {} \; | while read mod; do
-      echo -n "$mod: "
-      echo "<?php  print(\"ok\\n\");  ?>" > $PHPINDEX
-      base=$(basename $mod .so)
-      php -derror_reporting=-1 -d extension=$base -f $PHPINDEX
+    find /usr/lib64/extensions/no-debug-non-zts-*/ -type f -exec basename {} \; | while read -r mod; do
+        echo -n "${mod}: "
+        # shellcheck disable=SC2028
+        echo "<?php  print(\"ok\\n\");  ?>" > "${PHPINDEX}"
+        base=$(basename "${mod}" .so)
+        php -derror_reporting=-1 -d extension="${base}" -f "${PHPINDEX}"
     done
 }
-
