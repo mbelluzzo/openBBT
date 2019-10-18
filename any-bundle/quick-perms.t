@@ -123,14 +123,14 @@ Q() {
 		/usr/libexec/ssh-keysign
 		/usr/lib/polkit-1/polkit-agent-helper-1
 	)
-	local flattened=`printf -- "-not -path %s " "${whitelist[@]}"`
-	Q find /usr -perm /u=s ${flattened} 2> /dev/null
+	local flattened=$(printf -- "-not -path %s " "${whitelist[@]}")
+	Q find /usr -perm /u=s "${flattened}" 2> /dev/null
 }
 
 @test "Only whitelisted sgid files in /usr" {
 	local whitelist=(
                 /usr/bin/locate
 	)
-	local flattened=`printf -- "-not -path %s " "${whitelist[@]}"`
-	Q find /usr -perm /g=s ${flattened} 2> /dev/null
+	local flattened=$(printf -- "-not -path %s " "${whitelist[@]}")
+	Q find /usr -perm /g=s "${flattened}" 2> /dev/null
 }
