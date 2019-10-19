@@ -47,7 +47,7 @@
     NUM=0
     for b in /usr/bin/*; do
         output=$(ldd -r "$b" 2> /dev/null | sed -ne 's/^undefined symbol: \([^ \t@]\+\).*$/\t\1/p')
-        if [ ! -z "$output" ]; then
+        if [[ -n "$output" ]]; then
             echo "undefined symbols for $b:"
             echo "$output"
             NUM=$((NUM+1))
@@ -60,7 +60,7 @@
     NUM=0
     for b in /usr/bin/*; do
         output=$(ldd "$b" 2> /dev/null | sed -ne 's/^\t\([^ ]*\)[ \t]\+.*not found.*$/\t\1/p')
-        if [ ! -z "$output" ]; then
+        if [[ -n "$output" ]]; then
             echo "unresolved libraries for $b:"
             echo "$output"
             NUM=$((NUM+1))

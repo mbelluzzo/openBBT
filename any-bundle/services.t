@@ -1,5 +1,7 @@
 #!/usr/bin/env bats
 
+# shellcheck disable=SC2016
+
 setup() {
 	BROKEN_FILE="$(mktemp)"
 }
