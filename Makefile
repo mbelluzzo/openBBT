@@ -15,7 +15,7 @@ all:
 
 # Static Code Analysis
 # ====================
-check_CHECKOPTS := --exclude=1091,2155 ${CHECKOPTS}
+check_CHECKOPTS := --exclude=1091,2155,2164 ${CHECKOPTS}
 check:
 	@echo "Shellcheck [All Bundles]:"
 	shellcheck -s bash -x $(check_CHECKOPTS) $(SRC)
